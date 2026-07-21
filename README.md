@@ -53,6 +53,26 @@ Safari extensions must ship inside an app, so you need full Xcode once:
 Note: free-Apple-ID builds expire after 7 days — re-run from Xcode, or use a
 paid developer account / TestFlight for a permanent install.
 
+## New machine (fresh clone)
+
+`config.js` holds the API token, so it is **gitignored — a fresh clone won't
+build until it's generated**. Never run `xcodebuild` or `make-app.sh` directly
+on a new machine; `sync-ext.sh` does the whole thing:
+
+```sh
+# one-time Xcode setup (App Store install first):
+sudo xcode-select -s /Applications/Xcode.app
+sudo xcodebuild -license accept && sudo xcodebuild -runFirstLaunch
+
+export BLINKS_API_TOKEN=<the token from the server's /opt/blog/.env>
+./sync-ext.sh
+```
+
+That generates config.js, builds the app, installs it to /Applications, and
+launches it. Then flip the Safari toggles it prints (unsigned extensions are
+hidden until you do). The extension won't appear in Safari's Extensions list
+until the app has been **built AND launched at least once** on that machine.
+
 ## Config / token
 
 No manual token entry: `extension/config.js` (gitignored) bakes the server URL
