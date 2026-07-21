@@ -1,0 +1,999 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C15BC34B301008E200D00899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15BC34A301008E200D00899 /* AppDelegate.swift */; };
+		C15BC34D301008E200D00899 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15BC34C301008E200D00899 /* SceneDelegate.swift */; };
+		C15BC350301008E200D00899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15BC34E301008E200D00899 /* LaunchScreen.storyboard */; };
+		C15BC353301008E200D00899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15BC351301008E200D00899 /* Main.storyboard */; };
+		C15BC35C301008E200D00899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15BC35B301008E200D00899 /* AppDelegate.swift */; };
+		C15BC35F301008E200D00899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15BC35D301008E200D00899 /* Main.storyboard */; };
+		C15BC366301008E200D00899 /* Blinks Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C15BC365301008E200D00899 /* Blinks Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C15BC370301008E200D00899 /* Blinks Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C15BC36F301008E200D00899 /* Blinks Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C15BC375301008E200D00899 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = C15BC33A301008E200D00899 /* Main.html */; };
+		C15BC376301008E200D00899 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = C15BC33A301008E200D00899 /* Main.html */; };
+		C15BC377301008E200D00899 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C15BC33C301008E200D00899 /* Icon.png */; };
+		C15BC378301008E200D00899 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C15BC33C301008E200D00899 /* Icon.png */; };
+		C15BC379301008E200D00899 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = C15BC33D301008E200D00899 /* Style.css */; };
+		C15BC37A301008E200D00899 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = C15BC33D301008E200D00899 /* Style.css */; };
+		C15BC37B301008E200D00899 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = C15BC33E301008E200D00899 /* Script.js */; };
+		C15BC37C301008E200D00899 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = C15BC33E301008E200D00899 /* Script.js */; };
+		C15BC37D301008E200D00899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15BC33F301008E200D00899 /* ViewController.swift */; };
+		C15BC37E301008E200D00899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15BC33F301008E200D00899 /* ViewController.swift */; };
+		C15BC37F301008E200D00899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C15BC340301008E200D00899 /* Assets.xcassets */; };
+		C15BC380301008E200D00899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C15BC340301008E200D00899 /* Assets.xcassets */; };
+		C15BC381301008E200D00899 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15BC342301008E200D00899 /* SafariWebExtensionHandler.swift */; };
+		C15BC382301008E200D00899 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15BC342301008E200D00899 /* SafariWebExtensionHandler.swift */; };
+		C15BC39A301008E300D00899 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = C15BC394301008E300D00899 /* popup.js */; };
+		AAAABBBB0000000000000002 /* config.js in Resources */ = {isa = PBXBuildFile; fileRef = AAAABBBB0000000000000001 /* config.js */; };
+		AAAABBBB0000000000000003 /* config.js in Resources */ = {isa = PBXBuildFile; fileRef = AAAABBBB0000000000000001 /* config.js */; };
+		C15BC39B301008E300D00899 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = C15BC395301008E300D00899 /* popup.html */; };
+		C15BC39C301008E300D00899 /* gen_icons.py in Resources */ = {isa = PBXBuildFile; fileRef = C15BC396301008E300D00899 /* gen_icons.py */; };
+		C15BC39D301008E300D00899 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = C15BC397301008E300D00899 /* icons */; };
+		C15BC39E301008E300D00899 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = C15BC398301008E300D00899 /* manifest.json */; };
+		C15BC39F301008E300D00899 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = C15BC399301008E300D00899 /* popup.css */; };
+		C15BC3A0301008E300D00899 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = C15BC394301008E300D00899 /* popup.js */; };
+		C15BC3A1301008E300D00899 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = C15BC395301008E300D00899 /* popup.html */; };
+		C15BC3A2301008E300D00899 /* gen_icons.py in Resources */ = {isa = PBXBuildFile; fileRef = C15BC396301008E300D00899 /* gen_icons.py */; };
+		C15BC3A3301008E300D00899 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = C15BC397301008E300D00899 /* icons */; };
+		C15BC3A4301008E300D00899 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = C15BC398301008E300D00899 /* manifest.json */; };
+		C15BC3A5301008E300D00899 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = C15BC399301008E300D00899 /* popup.css */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C15BC367301008E200D00899 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C15BC334301008E100D00899 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C15BC364301008E200D00899;
+			remoteInfo = "Blinks Extension (iOS)";
+		};
+		C15BC371301008E200D00899 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C15BC334301008E100D00899 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C15BC36E301008E200D00899;
+			remoteInfo = "Blinks Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C15BC388301008E200D00899 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C15BC366301008E200D00899 /* Blinks Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C15BC38F301008E200D00899 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C15BC370301008E200D00899 /* Blinks Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C15BC33B301008E200D00899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		C15BC33C301008E200D00899 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		C15BC33D301008E200D00899 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		C15BC33E301008E200D00899 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		C15BC33F301008E200D00899 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C15BC340301008E200D00899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C15BC342301008E200D00899 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		C15BC347301008E200D00899 /* Blinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C15BC34A301008E200D00899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C15BC34C301008E200D00899 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C15BC34F301008E200D00899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C15BC352301008E200D00899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C15BC354301008E200D00899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C15BC359301008E200D00899 /* Blinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C15BC35B301008E200D00899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C15BC35E301008E200D00899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C15BC360301008E200D00899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C15BC365301008E200D00899 /* Blinks Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Blinks Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C15BC36A301008E200D00899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C15BC36F301008E200D00899 /* Blinks Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Blinks Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C15BC374301008E200D00899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C15BC394301008E300D00899 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.js; path = Resources/popup.js; sourceTree = "<group>"; };
+		AAAABBBB0000000000000001 /* config.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = config.js; path = Resources/config.js; sourceTree = "<group>"; };
+		C15BC395301008E300D00899 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = Resources/popup.html; sourceTree = "<group>"; };
+		C15BC396301008E300D00899 /* gen_icons.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; name = gen_icons.py; path = Resources/gen_icons.py; sourceTree = "<group>"; };
+		C15BC397301008E300D00899 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = Resources/icons; sourceTree = "<group>"; };
+		C15BC398301008E300D00899 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
+		C15BC399301008E300D00899 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = popup.css; path = Resources/popup.css; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C15BC344301008E200D00899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C15BC356301008E200D00899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C15BC362301008E200D00899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C15BC36C301008E200D00899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C15BC333301008E100D00899 = {
+			isa = PBXGroup;
+			children = (
+				C15BC338301008E200D00899 /* Shared (App) */,
+				C15BC341301008E200D00899 /* Shared (Extension) */,
+				C15BC349301008E200D00899 /* iOS (App) */,
+				C15BC35A301008E200D00899 /* macOS (App) */,
+				C15BC369301008E200D00899 /* iOS (Extension) */,
+				C15BC373301008E200D00899 /* macOS (Extension) */,
+				C15BC348301008E200D00899 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C15BC338301008E200D00899 /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				C15BC33F301008E200D00899 /* ViewController.swift */,
+				C15BC340301008E200D00899 /* Assets.xcassets */,
+				C15BC339301008E200D00899 /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		C15BC339301008E200D00899 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C15BC33A301008E200D00899 /* Main.html */,
+				C15BC33C301008E200D00899 /* Icon.png */,
+				C15BC33D301008E200D00899 /* Style.css */,
+				C15BC33E301008E200D00899 /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C15BC341301008E200D00899 /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				C15BC393301008E300D00899 /* Resources */,
+				C15BC342301008E200D00899 /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		C15BC348301008E200D00899 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C15BC347301008E200D00899 /* Blinks.app */,
+				C15BC359301008E200D00899 /* Blinks.app */,
+				C15BC365301008E200D00899 /* Blinks Extension.appex */,
+				C15BC36F301008E200D00899 /* Blinks Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C15BC349301008E200D00899 /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				C15BC34A301008E200D00899 /* AppDelegate.swift */,
+				C15BC34C301008E200D00899 /* SceneDelegate.swift */,
+				C15BC34E301008E200D00899 /* LaunchScreen.storyboard */,
+				C15BC351301008E200D00899 /* Main.storyboard */,
+				C15BC354301008E200D00899 /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		C15BC35A301008E200D00899 /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				C15BC35B301008E200D00899 /* AppDelegate.swift */,
+				C15BC35D301008E200D00899 /* Main.storyboard */,
+				C15BC360301008E200D00899 /* Info.plist */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		C15BC369301008E200D00899 /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				C15BC36A301008E200D00899 /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		C15BC373301008E200D00899 /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				C15BC374301008E200D00899 /* Info.plist */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		C15BC393301008E300D00899 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C15BC394301008E300D00899 /* popup.js */,
+				AAAABBBB0000000000000001 /* config.js */,
+				C15BC395301008E300D00899 /* popup.html */,
+				C15BC396301008E300D00899 /* gen_icons.py */,
+				C15BC397301008E300D00899 /* icons */,
+				C15BC398301008E300D00899 /* manifest.json */,
+				C15BC399301008E300D00899 /* popup.css */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C15BC346301008E200D00899 /* Blinks (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C15BC389301008E200D00899 /* Build configuration list for PBXNativeTarget "Blinks (iOS)" */;
+			buildPhases = (
+				C15BC343301008E200D00899 /* Sources */,
+				C15BC344301008E200D00899 /* Frameworks */,
+				C15BC345301008E200D00899 /* Resources */,
+				C15BC388301008E200D00899 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C15BC368301008E200D00899 /* PBXTargetDependency */,
+			);
+			name = "Blinks (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "Blinks (iOS)";
+			productReference = C15BC347301008E200D00899 /* Blinks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C15BC358301008E200D00899 /* Blinks (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C15BC390301008E200D00899 /* Build configuration list for PBXNativeTarget "Blinks (macOS)" */;
+			buildPhases = (
+				C15BC355301008E200D00899 /* Sources */,
+				C15BC356301008E200D00899 /* Frameworks */,
+				C15BC357301008E200D00899 /* Resources */,
+				C15BC38F301008E200D00899 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C15BC372301008E200D00899 /* PBXTargetDependency */,
+			);
+			name = "Blinks (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Blinks (macOS)";
+			productReference = C15BC359301008E200D00899 /* Blinks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C15BC364301008E200D00899 /* Blinks Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C15BC385301008E200D00899 /* Build configuration list for PBXNativeTarget "Blinks Extension (iOS)" */;
+			buildPhases = (
+				C15BC361301008E200D00899 /* Sources */,
+				C15BC362301008E200D00899 /* Frameworks */,
+				C15BC363301008E200D00899 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Blinks Extension (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "Blinks Extension (iOS)";
+			productReference = C15BC365301008E200D00899 /* Blinks Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		C15BC36E301008E200D00899 /* Blinks Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C15BC38C301008E200D00899 /* Build configuration list for PBXNativeTarget "Blinks Extension (macOS)" */;
+			buildPhases = (
+				C15BC36B301008E200D00899 /* Sources */,
+				C15BC36C301008E200D00899 /* Frameworks */,
+				C15BC36D301008E200D00899 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Blinks Extension (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Blinks Extension (macOS)";
+			productReference = C15BC36F301008E200D00899 /* Blinks Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C15BC334301008E100D00899 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					C15BC346301008E200D00899 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					C15BC358301008E200D00899 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					C15BC364301008E200D00899 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					C15BC36E301008E200D00899 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+				};
+			};
+			buildConfigurationList = C15BC337301008E100D00899 /* Build configuration list for PBXProject "Blinks" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C15BC333301008E100D00899;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C15BC348301008E200D00899 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C15BC346301008E200D00899 /* Blinks (iOS) */,
+				C15BC358301008E200D00899 /* Blinks (macOS) */,
+				C15BC364301008E200D00899 /* Blinks Extension (iOS) */,
+				C15BC36E301008E200D00899 /* Blinks Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C15BC345301008E200D00899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C15BC377301008E200D00899 /* Icon.png in Resources */,
+				C15BC350301008E200D00899 /* LaunchScreen.storyboard in Resources */,
+				C15BC375301008E200D00899 /* Main.html in Resources */,
+				C15BC37B301008E200D00899 /* Script.js in Resources */,
+				C15BC37F301008E200D00899 /* Assets.xcassets in Resources */,
+				C15BC353301008E200D00899 /* Main.storyboard in Resources */,
+				C15BC379301008E200D00899 /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C15BC357301008E200D00899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C15BC378301008E200D00899 /* Icon.png in Resources */,
+				C15BC37A301008E200D00899 /* Style.css in Resources */,
+				C15BC35F301008E200D00899 /* Main.storyboard in Resources */,
+				C15BC37C301008E200D00899 /* Script.js in Resources */,
+				C15BC380301008E200D00899 /* Assets.xcassets in Resources */,
+				C15BC376301008E200D00899 /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C15BC363301008E200D00899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C15BC3A0301008E300D00899 /* popup.js in Resources */,
+				AAAABBBB0000000000000002 /* config.js in Resources */,
+				C15BC3A3301008E300D00899 /* icons in Resources */,
+				C15BC3A5301008E300D00899 /* popup.css in Resources */,
+				C15BC3A4301008E300D00899 /* manifest.json in Resources */,
+				C15BC3A2301008E300D00899 /* gen_icons.py in Resources */,
+				C15BC3A1301008E300D00899 /* popup.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C15BC36D301008E200D00899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C15BC39A301008E300D00899 /* popup.js in Resources */,
+				AAAABBBB0000000000000003 /* config.js in Resources */,
+				C15BC39D301008E300D00899 /* icons in Resources */,
+				C15BC39F301008E300D00899 /* popup.css in Resources */,
+				C15BC39E301008E300D00899 /* manifest.json in Resources */,
+				C15BC39C301008E300D00899 /* gen_icons.py in Resources */,
+				C15BC39B301008E300D00899 /* popup.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C15BC343301008E200D00899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C15BC37D301008E200D00899 /* ViewController.swift in Sources */,
+				C15BC34B301008E200D00899 /* AppDelegate.swift in Sources */,
+				C15BC34D301008E200D00899 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C15BC355301008E200D00899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C15BC37E301008E200D00899 /* ViewController.swift in Sources */,
+				C15BC35C301008E200D00899 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C15BC361301008E200D00899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C15BC381301008E200D00899 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C15BC36B301008E200D00899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C15BC382301008E200D00899 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C15BC368301008E200D00899 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C15BC364301008E200D00899 /* Blinks Extension (iOS) */;
+			targetProxy = C15BC367301008E200D00899 /* PBXContainerItemProxy */;
+		};
+		C15BC372301008E200D00899 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C15BC36E301008E200D00899 /* Blinks Extension (macOS) */;
+			targetProxy = C15BC371301008E200D00899 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C15BC33A301008E200D00899 /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C15BC33B301008E200D00899 /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		C15BC34E301008E200D00899 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C15BC34F301008E200D00899 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C15BC351301008E200D00899 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C15BC352301008E200D00899 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C15BC35D301008E200D00899 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C15BC35E301008E200D00899 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C15BC383301008E200D00899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C15BC384301008E200D00899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C15BC386301008E200D00899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Blinks Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = online.bobbby.Blinks.Extension;
+				PRODUCT_NAME = "Blinks Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C15BC387301008E200D00899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Blinks Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = online.bobbby.Blinks.Extension;
+				PRODUCT_NAME = "Blinks Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C15BC38A301008E200D00899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Blinks;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = online.bobbby.Blinks;
+				PRODUCT_NAME = Blinks;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C15BC38B301008E200D00899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Blinks;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = online.bobbby.Blinks;
+				PRODUCT_NAME = Blinks;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C15BC38D301008E200D00899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Blinks Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = online.bobbby.Blinks.Extension;
+				PRODUCT_NAME = "Blinks Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C15BC38E301008E200D00899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Blinks Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = online.bobbby.Blinks.Extension;
+				PRODUCT_NAME = "Blinks Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C15BC391301008E200D00899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Blinks;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = online.bobbby.Blinks;
+				PRODUCT_NAME = Blinks;
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C15BC392301008E200D00899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Blinks;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = online.bobbby.Blinks;
+				PRODUCT_NAME = Blinks;
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C15BC337301008E100D00899 /* Build configuration list for PBXProject "Blinks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C15BC383301008E200D00899 /* Debug */,
+				C15BC384301008E200D00899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C15BC385301008E200D00899 /* Build configuration list for PBXNativeTarget "Blinks Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C15BC386301008E200D00899 /* Debug */,
+				C15BC387301008E200D00899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C15BC389301008E200D00899 /* Build configuration list for PBXNativeTarget "Blinks (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C15BC38A301008E200D00899 /* Debug */,
+				C15BC38B301008E200D00899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C15BC38C301008E200D00899 /* Build configuration list for PBXNativeTarget "Blinks Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C15BC38D301008E200D00899 /* Debug */,
+				C15BC38E301008E200D00899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C15BC390301008E200D00899 /* Build configuration list for PBXNativeTarget "Blinks (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C15BC391301008E200D00899 /* Debug */,
+				C15BC392301008E200D00899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C15BC334301008E100D00899 /* Project object */;
+}
