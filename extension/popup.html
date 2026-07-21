@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main id="app">
+    <header>
+      <div id="page-title" class="page-title">…</div>
+      <button id="settings-btn" class="icon-btn" title="Settings">&#9881;</button>
+    </header>
+    <div id="page-url" class="page-url"></div>
+
+    <section id="main-view">
+      <input id="tag-input" type="text" placeholder="search tags, or new ones: a, b, c"
+             autocomplete="off" autocapitalize="none" spellcheck="false">
+      <div id="selected-tags" class="chips"></div>
+      <div id="tag-list" class="chips"></div>
+      <textarea id="desc-input" rows="2" placeholder="notes (optional)"></textarea>
+
+      <div class="actions">
+        <button id="save-btn" class="primary">Save</button>
+        <button id="archive-btn">Make sure it's archived</button>
+      </div>
+      <div id="status" class="status"></div>
+    </section>
+
+    <section id="settings-view" hidden>
+      <label>Server
+        <input id="server-input" type="url" placeholder="https://bobbby.online">
+      </label>
+      <label>Token
+        <input id="token-input" type="password" placeholder="API token">
+      </label>
+      <div class="actions">
+        <button id="settings-save-btn" class="primary">Done</button>
+      </div>
+    </section>
+  </main>
+  <script src="config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
