@@ -89,11 +89,14 @@
   }
 
   // Styled like the extension popup: chips, search-or-add input, accent save.
+  // Lives on document.body with fixed positioning — post containers have
+  // overflow:hidden and clip anything inside them.
   function openPanel(btn, likeBtn) {
-    const existing = btn.parentElement.querySelector("[data-blinks-panel]");
+    const existing = document.querySelector("[data-blinks-panel]");
     if (existing) {
-      existing.remove();
-      return;
+      const wasMine = existing._openerBtn === btn;
+      existing._close();
+      if (wasMine) return;
     }
 
     const url = postUrlFor(likeBtn);
@@ -105,12 +108,36 @@
 
     const panel = document.createElement("div");
     panel.setAttribute("data-blinks-panel", "1");
+    panel._openerBtn = btn;
     panel.style.cssText =
-      "position:absolute;top:calc(100% + 6px);right:0;z-index:99999;width:300px;" +
+      "position:fixed;z-index:2147483647;width:300px;" +
       "background:#fff;color:#000;border:1px solid #d5dbe3;border-radius:12px;" +
       "box-shadow:0 8px 28px rgba(0,0,0,0.22);padding:10px;text-align:left;" +
       "font:13px -apple-system,system-ui,sans-serif;cursor:default;";
     panel.addEventListener("click", (e) => e.stopPropagation());
+
+    const onScroll = () => panel._close();
+    const onDown = (e) => {
+      if (!panel.contains(e.target) && e.target !== btn) panel._close();
+    };
+
+    panel._close = () => {
+      window.removeEventListener("scroll", onScroll, true);
+      document.removeEventListener("mousedown", onDown, true);
+      panel.remove();
+    };
+
+    function place() {
+      const r = btn.getBoundingClientRect();
+      const left = Math.min(Math.max(8, r.right - 300), window.innerWidth - 308);
+      panel.style.left = left + "px";
+      const below = r.bottom + 6;
+      if (below + panel.offsetHeight > window.innerHeight - 8) {
+        panel.style.top = Math.max(8, r.top - panel.offsetHeight - 6) + "px";
+      } else {
+        panel.style.top = below + "px";
+      }
+    }
 
     panel.innerHTML =
       '<div style="font-weight:600;margin-bottom:6px;">save to <span style="color:#ff4500;">blinks</span></div>' +
@@ -190,7 +217,7 @@
           saveBtn.textContent = "Saved ✓";
           btn.textContent = "✓";
           btn.style.color = "#ff4500";
-          setTimeout(() => panel.remove(), 700);
+          setTimeout(() => panel._close(), 700);
         })
         .catch(() => {
           saveBtn.textContent = "retry";
@@ -203,19 +230,26 @@
       e.stopPropagation();
       doSave();
     });
-    input.addEventListener("input", renderChips);
+    input.addEventListener("input", () => {
+      renderChips();
+      place();
+    });
     input.addEventListener("keydown", (e) => {
       e.stopPropagation();
       if (e.key === "Enter") doSave();
-      if (e.key === "Escape") panel.remove();
+      if (e.key === "Escape") panel._close();
     });
 
-    btn.parentElement.appendChild(panel);
+    document.body.appendChild(panel);
     renderChips();
+    place();
     fetchTags().then((tags) => {
       allTags = tags;
       renderChips();
+      place();
     });
+    window.addEventListener("scroll", onScroll, true);
+    document.addEventListener("mousedown", onDown, true);
     input.focus();
   }
 
