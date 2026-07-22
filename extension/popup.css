@@ -22,13 +22,18 @@ header {
   gap: 8px;
 }
 
-.page-title {
+input.page-title {
   flex: 1;
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  min-width: 0;
+  font: 600 15px -apple-system, system-ui, sans-serif;
+  border: none;
+  background: transparent;
+  padding: 2px 0;
+  border-bottom: 1px dashed transparent;
 }
+
+input.page-title:hover { border-bottom-color: rgba(127, 127, 127, 0.4); }
+input.page-title:focus { outline: none; border-bottom: 1px solid var(--accent); }
 
 .page-url {
   font-size: 12px;

@@ -137,7 +137,7 @@ async function save() {
       headers: headers(),
       body: JSON.stringify({
         url: state.tab.url,
-        title: state.tab.title,
+        title: els.title.value.trim() || state.tab.title,
         description: els.desc.value.trim() || null,
         tags,
       }),
@@ -191,6 +191,7 @@ async function checkExisting() {
     const data = await res.json();
     if (!data.blink) return;
     for (const tag of data.blink.tags || []) state.selectedTags.add(tag);
+    if (data.blink.title) els.title.value = data.blink.title;
     if (data.blink.description && !els.desc.value) els.desc.value = data.blink.description;
     setStatus("Already saved — saving again updates it.", "ok");
     renderTags();
@@ -204,7 +205,7 @@ async function init() {
 
   const [tab] = await api.tabs.query({ active: true, currentWindow: true });
   state.tab = tab;
-  els.title.textContent = tab?.title || "";
+  els.title.value = tab?.title || "";
   els.url.textContent = tab?.url || "";
 
   renderTags(); // instant render from cache
