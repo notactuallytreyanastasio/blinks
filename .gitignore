@@ -3,3 +3,4 @@ extension/config.js
 app/Blinks/Shared (Extension)/Resources/config.js
 app/**/xcuserdata/
 .DS_Store
+node_modules/
