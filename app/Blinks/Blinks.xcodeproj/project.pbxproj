@@ -31,6 +31,10 @@
 		C15BC382301008E200D00899 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15BC342301008E200D00899 /* SafariWebExtensionHandler.swift */; };
 		C15BC39A301008E300D00899 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = C15BC394301008E300D00899 /* popup.js */; };
 		AAAABBBB0000000000000002 /* config.js in Resources */ = {isa = PBXBuildFile; fileRef = AAAABBBB0000000000000001 /* config.js */; };
+		DDDDBBBB0000000000000002 /* bsky.js in Resources */ = {isa = PBXBuildFile; fileRef = DDDDBBBB0000000000000001 /* bsky.js */; };
+		DDDDBBBB0000000000000003 /* bsky.js in Resources */ = {isa = PBXBuildFile; fileRef = DDDDBBBB0000000000000001 /* bsky.js */; };
+		CCCCBBBB0000000000000002 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = CCCCBBBB0000000000000001 /* background.js */; };
+		CCCCBBBB0000000000000003 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = CCCCBBBB0000000000000001 /* background.js */; };
 		AAAABBBB0000000000000003 /* config.js in Resources */ = {isa = PBXBuildFile; fileRef = AAAABBBB0000000000000001 /* config.js */; };
 		C15BC39B301008E300D00899 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = C15BC395301008E300D00899 /* popup.html */; };
 		C15BC39C301008E300D00899 /* gen_icons.py in Resources */ = {isa = PBXBuildFile; fileRef = C15BC396301008E300D00899 /* gen_icons.py */; };
@@ -111,6 +115,8 @@
 		C15BC374301008E200D00899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C15BC394301008E300D00899 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.js; path = Resources/popup.js; sourceTree = "<group>"; };
 		AAAABBBB0000000000000001 /* config.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = config.js; path = Resources/config.js; sourceTree = "<group>"; };
+		DDDDBBBB0000000000000001 /* bsky.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = bsky.js; path = Resources/bsky.js; sourceTree = "<group>"; };
+		CCCCBBBB0000000000000001 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = Resources/background.js; sourceTree = "<group>"; };
 		C15BC395301008E300D00899 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = Resources/popup.html; sourceTree = "<group>"; };
 		C15BC396301008E300D00899 /* gen_icons.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; name = gen_icons.py; path = Resources/gen_icons.py; sourceTree = "<group>"; };
 		C15BC397301008E300D00899 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = Resources/icons; sourceTree = "<group>"; };
@@ -247,6 +253,8 @@
 			children = (
 				C15BC394301008E300D00899 /* popup.js */,
 				AAAABBBB0000000000000001 /* config.js */,
+				DDDDBBBB0000000000000001 /* bsky.js */,
+				CCCCBBBB0000000000000001 /* background.js */,
 				C15BC395301008E300D00899 /* popup.html */,
 				C15BC396301008E300D00899 /* gen_icons.py */,
 				C15BC397301008E300D00899 /* icons */,
@@ -420,6 +428,8 @@
 			files = (
 				C15BC3A0301008E300D00899 /* popup.js in Resources */,
 				AAAABBBB0000000000000002 /* config.js in Resources */,
+				DDDDBBBB0000000000000002 /* bsky.js in Resources */,
+				CCCCBBBB0000000000000002 /* background.js in Resources */,
 				C15BC3A3301008E300D00899 /* icons in Resources */,
 				C15BC3A5301008E300D00899 /* popup.css in Resources */,
 				C15BC3A4301008E300D00899 /* manifest.json in Resources */,
@@ -434,6 +444,8 @@
 			files = (
 				C15BC39A301008E300D00899 /* popup.js in Resources */,
 				AAAABBBB0000000000000003 /* config.js in Resources */,
+				DDDDBBBB0000000000000003 /* bsky.js in Resources */,
+				CCCCBBBB0000000000000003 /* background.js in Resources */,
 				C15BC39D301008E300D00899 /* icons in Resources */,
 				C15BC39F301008E300D00899 /* popup.css in Resources */,
 				C15BC39E301008E300D00899 /* manifest.json in Resources */,
