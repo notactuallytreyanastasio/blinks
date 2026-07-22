@@ -72,6 +72,23 @@
     });
   }
 
+  // Existing tags (with counts) for the chip list — fetched once per page.
+  let tagsCache = null;
+  function fetchTags() {
+    if (tagsCache) return Promise.resolve(tagsCache);
+    if (!cfg || !cfg.token) return Promise.resolve([]);
+    return fetch(cfg.server.replace(/\/+$/, "") + "/api/blinks/tags", {
+      headers: { authorization: "Bearer " + cfg.token },
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        tagsCache = data.tags || [];
+        return tagsCache;
+      })
+      .catch(() => []);
+  }
+
+  // Styled like the extension popup: chips, search-or-add input, accent save.
   function openPanel(btn, likeBtn) {
     const existing = btn.parentElement.querySelector("[data-blinks-panel]");
     if (existing) {
@@ -82,36 +99,98 @@
     const url = postUrlFor(likeBtn);
     if (!url) return;
 
+    const ACCENT = "#4f46e5";
+    const selected = new Set(["bluesky"]);
+    let allTags = [];
+
     const panel = document.createElement("div");
     panel.setAttribute("data-blinks-panel", "1");
     panel.style.cssText =
-      "position:absolute;z-index:9999;background:#fff;border:1px solid #c8d1dc;" +
-      "border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.18);padding:8px;" +
-      "display:flex;gap:6px;align-items:center;margin-top:4px;";
+      "position:absolute;top:calc(100% + 6px);right:0;z-index:99999;width:300px;" +
+      "background:#fff;color:#000;border:1px solid #d5dbe3;border-radius:12px;" +
+      "box-shadow:0 8px 28px rgba(0,0,0,0.22);padding:10px;text-align:left;" +
+      "font:13px -apple-system,system-ui,sans-serif;cursor:default;";
+    panel.addEventListener("click", (e) => e.stopPropagation());
 
-    const input = document.createElement("input");
-    input.type = "text";
-    input.value = "bluesky";
-    input.placeholder = "tags, comma separated";
-    input.style.cssText =
-      "font:13px -apple-system,sans-serif;border:1px solid #c8d1dc;border-radius:6px;" +
-      "padding:4px 8px;width:180px;color:#000;background:#fff;";
+    panel.innerHTML =
+      '<div style="font-weight:600;margin-bottom:6px;">save to <span style="color:#ff4500;">blinks</span></div>' +
+      '<div data-sel style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;"></div>' +
+      '<input data-in type="text" placeholder="search tags, or new ones: a, b, c" autocapitalize="none" ' +
+      'style="width:100%;box-sizing:border-box;font:13px -apple-system,sans-serif;border:1px solid #c8d1dc;' +
+      'border-radius:8px;padding:6px 8px;color:#000;background:#fff;outline-color:' + ACCENT + ';">' +
+      '<div data-list style="display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;max-height:96px;overflow-y:auto;"></div>' +
+      '<div style="display:flex;justify-content:flex-end;margin-top:8px;">' +
+      '<button data-save style="font:600 13px -apple-system,sans-serif;background:' + ACCENT + ';color:#fff;' +
+      'border:none;border-radius:8px;padding:6px 16px;cursor:pointer;">Save</button></div>';
 
-    const saveBtn = document.createElement("button");
-    saveBtn.textContent = "save";
-    saveBtn.style.cssText =
-      "font:bold 12px -apple-system,sans-serif;background:#ff4500;color:#fff;" +
-      "border:none;border-radius:6px;padding:5px 12px;cursor:pointer;";
+    const input = panel.querySelector("[data-in]");
+    const selDiv = panel.querySelector("[data-sel]");
+    const listDiv = panel.querySelector("[data-list]");
+    const saveBtn = panel.querySelector("[data-save]");
+
+    const chipCss =
+      "border:none;border-radius:999px;padding:3px 10px;font:12px -apple-system,sans-serif;" +
+      "cursor:pointer;background:rgba(127,127,127,0.14);color:#222;";
+
+    function typedTags() {
+      return input.value.split(",").map((t) => t.trim().toLowerCase()).filter(Boolean);
+    }
+
+    function filterFragment() {
+      const parts = input.value.split(",");
+      return parts[parts.length - 1].trim().toLowerCase();
+    }
+
+    function renderChips() {
+      selDiv.innerHTML = "";
+      selected.forEach((tag) => {
+        const chip = document.createElement("button");
+        chip.style.cssText = chipCss + "background:" + ACCENT + ";color:#fff;";
+        chip.textContent = tag;
+        chip.onclick = (e) => {
+          e.stopPropagation();
+          selected.delete(tag);
+          renderChips();
+        };
+        selDiv.appendChild(chip);
+      });
+
+      const frag = filterFragment();
+      listDiv.innerHTML = "";
+      allTags
+        .filter((t) => !selected.has(t.name))
+        .filter((t) => !frag || t.name.includes(frag))
+        .slice(0, 20)
+        .forEach((t) => {
+          const chip = document.createElement("button");
+          chip.style.cssText = chipCss;
+          chip.textContent = t.name;
+          const n = document.createElement("span");
+          n.textContent = " " + t.count;
+          n.style.cssText = "opacity:0.5;font-size:10px;";
+          chip.appendChild(n);
+          chip.onclick = (e) => {
+            e.stopPropagation();
+            selected.add(t.name);
+            const parts = input.value.split(",");
+            parts.pop();
+            input.value = parts.length ? parts.join(",") + ", " : "";
+            renderChips();
+            input.focus();
+          };
+          listDiv.appendChild(chip);
+        });
+    }
 
     const doSave = () => {
       saveBtn.textContent = "…";
-      const tags = input.value.split(",").map((t) => t.trim()).filter(Boolean);
+      const tags = [...selected, ...typedTags()];
       save({ url, title: postTitleFor(likeBtn), tags })
         .then(() => {
-          saveBtn.textContent = "✓";
+          saveBtn.textContent = "Saved ✓";
           btn.textContent = "✓";
           btn.style.color = "#ff4500";
-          setTimeout(() => panel.remove(), 600);
+          setTimeout(() => panel.remove(), 700);
         })
         .catch(() => {
           saveBtn.textContent = "retry";
@@ -124,19 +203,20 @@
       e.stopPropagation();
       doSave();
     });
+    input.addEventListener("input", renderChips);
     input.addEventListener("keydown", (e) => {
       e.stopPropagation();
       if (e.key === "Enter") doSave();
       if (e.key === "Escape") panel.remove();
     });
-    input.addEventListener("click", (e) => e.stopPropagation());
 
-    btn.parentElement.style.position = "relative";
-    panel.appendChild(input);
-    panel.appendChild(saveBtn);
     btn.parentElement.appendChild(panel);
+    renderChips();
+    fetchTags().then((tags) => {
+      allTags = tags;
+      renderChips();
+    });
     input.focus();
-    input.select();
   }
 
   function makeButton(likeBtn) {
