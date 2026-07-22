@@ -5,6 +5,9 @@ const els = {
   url: document.getElementById("page-url"),
   input: document.getElementById("tag-input"),
   desc: document.getElementById("desc-input"),
+  quoteRow: document.getElementById("quote-row"),
+  quoteText: document.getElementById("quote-text"),
+  quoteX: document.getElementById("quote-x"),
   selected: document.getElementById("selected-tags"),
   list: document.getElementById("tag-list"),
   save: document.getElementById("save-btn"),
@@ -24,6 +27,7 @@ const config = typeof BLINKS_CONFIG !== "undefined" ? BLINKS_CONFIG : {};
 
 const state = {
   tab: null,
+  quote: null,
   settings: {
     server: config.server || "https://bobbby.online",
     token: config.token || "",
@@ -139,6 +143,7 @@ async function save() {
         url: state.tab.url,
         title: els.title.value.trim() || state.tab.title,
         description: els.desc.value.trim() || null,
+        quotes: state.quote ? [state.quote] : [],
         tags,
       }),
     });
@@ -180,6 +185,24 @@ async function saveSettings() {
   refreshTags();
 }
 
+// Highlighted text on the page becomes a saved quote (each save can add one).
+async function grabSelection() {
+  try {
+    const [res] = await api.scripting.executeScript({
+      target: { tabId: state.tab.id },
+      func: () => String(window.getSelection()),
+    });
+    const text = (res?.result || "").trim();
+    if (!text) return;
+    state.quote = text.slice(0, 2000);
+    els.quoteText.textContent =
+      "“" + (text.length > 140 ? text.slice(0, 140) + "…" : text) + "”";
+    els.quoteRow.hidden = false;
+  } catch (e) {
+    // no selection access (e.g. app store pages) — quietly skip
+  }
+}
+
 // If this URL was saved before, preselect its tags, prefill notes, and say so.
 async function checkExisting() {
   try {
@@ -211,6 +234,12 @@ async function init() {
   renderTags(); // instant render from cache
   refreshTags(); // then refresh from server
   checkExisting();
+  grabSelection();
+
+  els.quoteX.onclick = () => {
+    state.quote = null;
+    els.quoteRow.hidden = true;
+  };
 
   if (!state.settings.token) showSettings(true);
 

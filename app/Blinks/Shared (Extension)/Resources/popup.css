@@ -64,6 +64,22 @@ input {
 
 input:focus { outline: 2px solid var(--accent); border-color: transparent; }
 
+.quote-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  background: rgba(79, 70, 229, 0.08);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  padding: 6px 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.quote-label { color: var(--accent); font-weight: 600; }
+.quote-text { flex: 1; font-style: italic; }
+.quote-row .icon-btn { font-size: 12px; }
+
 textarea {
   width: 100%;
   margin-top: 8px;
