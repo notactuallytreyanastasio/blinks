@@ -10,9 +10,13 @@ rt.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        "x-blinks-token": BLINKS_CONFIG.token,
+        authorization: "Bearer " + BLINKS_CONFIG.token,
       },
-      body: JSON.stringify({ url: msg.url, title: msg.title, tags: ["bluesky"] }),
+      body: JSON.stringify({
+        url: msg.url,
+        title: msg.title,
+        tags: msg.tags && msg.tags.length ? msg.tags : ["bluesky"],
+      }),
     })
       .then((r) => sendResponse({ ok: r.ok }))
       .catch(() => sendResponse({ ok: false }));
