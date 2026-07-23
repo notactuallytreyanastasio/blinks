@@ -27,7 +27,10 @@ if ! xcodebuild -checkFirstLaunchStatus 2>/dev/null; then
   exit 1
 fi
 
-# Token: env var wins, otherwise pull from the blog's .env
+# Token: env var wins, then this repo's .env (BLINK_API_KEY), then blog's .env
+if [ -z "${BLINKS_API_TOKEN:-}" ]; then
+  BLINKS_API_TOKEN=$(grep -E '^(export )?BLINK_API_KEY=' .env 2>/dev/null | tail -1 | cut -d= -f2- || true)
+fi
 if [ -z "${BLINKS_API_TOKEN:-}" ]; then
   BLINKS_API_TOKEN=$(grep '^BLINKS_API_TOKEN=' "$BLOG_ENV" 2>/dev/null | cut -d= -f2- || true)
 fi
