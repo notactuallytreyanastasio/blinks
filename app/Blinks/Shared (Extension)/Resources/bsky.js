@@ -14,13 +14,30 @@
     );
   }
 
+  // Post links in the DOM also point at sub-pages (the like count links to
+  // /liked-by, repost count to /reposted-by, etc). Keep only the permalink.
+  const POST_PATH = /^(\/profile\/[^/]+\/post\/[^/]+)(?:\/(?:liked-by|reposted-by|quotes)\/?)?$/;
+
+  function permalinkFrom(href) {
+    let u;
+    try {
+      u = new URL(href, location.origin);
+    } catch (e) {
+      return null;
+    }
+    const m = POST_PATH.exec(u.pathname.replace(/\/+$/, "") || u.pathname);
+    return m ? u.origin + m[1] : null;
+  }
+
   function postUrlFor(likeBtn) {
     const item = itemFor(likeBtn);
-    const a = item && item.querySelector('a[href*="/post/"]');
-    if (a) return new URL(a.getAttribute("href"), location.origin).href;
+    const anchors = item ? item.querySelectorAll('a[href*="/post/"]') : [];
+    for (const a of anchors) {
+      const url = permalinkFrom(a.getAttribute("href"));
+      if (url) return url;
+    }
     // single post view: the main post's permalink is the page itself
-    if (/\/profile\/[^/]+\/post\//.test(location.pathname)) return location.href;
-    return null;
+    return permalinkFrom(location.href);
   }
 
   function postTitleFor(likeBtn) {

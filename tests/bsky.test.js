@@ -43,6 +43,19 @@ function loadBsky({ browserOpts = {}, fetchOverrides = {}, config = CONFIG } = {
   return { browserMock, fetchMock };
 }
 
+// Mounts, clicks through the panel, and returns the url the save message carried.
+async function savedUrl() {
+  const { browserMock } = loadBsky({
+    browserOpts: { sendMessageImpl: (msg, cb) => cb({ ok: true }) },
+    fetchOverrides: { tags: () => jsonResponse({ tags: [] }) },
+  });
+  clickSaveButton();
+  await microtaskFlush();
+  document.querySelector("[data-blinks-panel] [data-save]").click();
+  await microtaskFlush();
+  return browserMock.runtime.sendMessage.mock.calls[0][0].url;
+}
+
 function saveButtons() {
   return document.querySelectorAll("[data-blinks-btn]");
 }
@@ -177,6 +190,48 @@ describe("bsky.js", () => {
     input.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
 
     expect(document.querySelector("[data-blinks-panel]")).toBeNull();
+  });
+
+  it("ignores /liked-by links and saves the post permalink", async () => {
+    document.body.innerHTML = `
+      <div data-testid="feedItem-1">
+        <a href="/profile/alice.bsky.social/post/abc123/liked-by">12 likes</a>
+        <a href="/profile/alice.bsky.social/post/abc123">permalink</a>
+        <div data-testid="postText">Hello from bluesky</div>
+        <div class="bar-wrap">
+          <div class="bar"><div data-testid="likeBtn">like</div></div>
+        </div>
+      </div>
+    `;
+    expect(await savedUrl()).toBe("https://bsky.app/profile/alice.bsky.social/post/abc123");
+  });
+
+  it("strips the sub-page suffix when only a /liked-by link is present", async () => {
+    document.body.innerHTML = `
+      <div data-testid="postThreadItem-1">
+        <a href="/profile/alice.bsky.social/post/abc123/reposted-by">3 reposts</a>
+        <a href="/profile/alice.bsky.social/post/abc123/liked-by">12 likes</a>
+        <div data-testid="postText">Hello from bluesky</div>
+        <div class="bar-wrap">
+          <div class="bar"><div data-testid="likeBtn">like</div></div>
+        </div>
+      </div>
+    `;
+    expect(await savedUrl()).toBe("https://bsky.app/profile/alice.bsky.social/post/abc123");
+  });
+
+  it("falls back to the page permalink, normalized, when the item has no post link", async () => {
+    window.history.replaceState({}, "", "/profile/alice.bsky.social/post/abc123/liked-by");
+    document.body.innerHTML = `
+      <div data-testid="postThreadItem-1">
+        <div data-testid="postText">Hello from bluesky</div>
+        <div class="bar-wrap">
+          <div class="bar"><div data-testid="likeBtn">like</div></div>
+        </div>
+      </div>
+    `;
+    expect(await savedUrl()).toBe("https://bsky.app/profile/alice.bsky.social/post/abc123");
+    window.history.replaceState({}, "", "/");
   });
 
   it("clicking a suggested tag chip moves it into the selected chips", async () => {
