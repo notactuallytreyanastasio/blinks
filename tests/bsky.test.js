@@ -61,7 +61,7 @@ function saveButtons() {
 }
 
 function clickSaveButton() {
-  document.querySelector('[title="Save to blinks (v2)"]').click();
+  document.querySelector('[title="Save to blinks (v3)"]').click();
 }
 
 beforeEach(() => {

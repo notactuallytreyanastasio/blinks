@@ -276,7 +276,7 @@
     wrap.style.cssText = "display:inline-flex;position:relative;";
 
     const btn = document.createElement("div");
-    btn.title = "Save to blinks (v2)";
+    btn.title = "Save to blinks (v3)";
     btn.textContent = "🅱";
     btn.style.cssText =
       "display:inline-flex;align-items:center;justify-content:center;" +
